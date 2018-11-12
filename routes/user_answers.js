@@ -24,8 +24,8 @@ router.post("/post", function(req, res) {
   //add some checkings first
   model
     .insertMany([{ user: "1", answers: req.body }])
-    .then(v => console.log(v))
-    .catch(e => console.log(e));
+    .then(v => res.sendStatus(200))
+    .catch(e => res.sendStatus(500));
 });
 
 router.patch("/", function(req, res) {
