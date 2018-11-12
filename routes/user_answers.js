@@ -1,7 +1,7 @@
 var passport = require("passport");
 var express = require("express");
 var router = express.Router();
-const model = require("../db/test");
+const model = require("../db/userAnserws");
 /* post a new model. */
 router.post("/", function(req, res) {
   //add some checkings first
@@ -21,14 +21,11 @@ router.post("/", function(req, res) {
 
 /* get specific modals. */
 router.post("/post", function(req, res) {
-  console.log("i'm here");
   //add some checkings first
-  let filter = req.body.length == 0 ? {} : { _id: { $in: req.body } };
-  const result = model.find(filter);
-  result.then(v => res.send(v)).catch(e => {
-    console.log(e);
-    res.status(500).send({ message: e.message });
-  });
+  model
+    .insertMany([{ user: "1", answers: req.body }])
+    .then(v => console.log(v))
+    .catch(e => console.log(e));
 });
 
 router.patch("/", function(req, res) {
