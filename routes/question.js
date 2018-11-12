@@ -24,6 +24,10 @@ router.post("/get", function(req, res) {
     console.log(e);
     res.sendStatus(500);
   });
+  result.then(v => res.send(v)).catch(e => {
+    console.log(e);
+    res.sendStatus(500);
+  });
 });
 
 /*delete questions */
