@@ -18,6 +18,7 @@ router.post("/add", function(req, res) {
 router.post("/get", function(req, res) {
   console.log(req.body);
   let filter = req.body.length == 0 ? {} : { _id: { $in: req.body } };
+  // added the field
   console.log(filter);
   const result = question.find(filter);
   result.then(v => res.send(v)).catch(e => {
