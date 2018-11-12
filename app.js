@@ -30,6 +30,7 @@ var loginRouter = require("./routes/login");
 var testRouter = require("./routes/test");
 var questionRouter = require("./routes/question");
 var categoryRouter = require("./routes/category");
+var userAnswersRouter = require("./routes/user_answers");
 var unauthorizedRouter = require("./routes/unauthorized");
 //-----------------------------//
 app.use(logger("dev"));
@@ -40,6 +41,7 @@ app.use(express.static(path.join(__dirname, "public")));
 //------Routes ----------------//
 app.use("/", indexRouter);
 app.use("/question", questionRouter);
+app.use("/user_answers", userAnswersRouter);
 app.use("/category", categoryRouter);
 app.use("/login", loginRouter);
 app.use("/test", testRouter);

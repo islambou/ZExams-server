@@ -21,6 +21,7 @@ router.post("/", function(req, res) {
 
 /* get specific modals. */
 router.post("/post", function(req, res) {
+  console.log("i'm here");
   //add some checkings first
   let filter = req.body.length == 0 ? {} : { _id: { $in: req.body } };
   const result = model.find(filter);
