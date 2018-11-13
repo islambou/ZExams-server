@@ -16,11 +16,9 @@ router.post("/add", function(req, res) {
 
 /* get  questions */
 router.post("/get", function(req, res) {
-  console.log(req.body);
   let filter = req.body.length == 0 ? {} : { _id: { $in: req.body } };
   // added the field
   // corrected the syntax error
-  console.log(filter);
   const result = question.find(filter);
   result.then(v => res.send(v)).catch(e => {
     console.log(e);
