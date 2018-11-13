@@ -76,7 +76,7 @@ async function calculateMark(testId, answers) {
 
   //this is a harsh methode to calculate the mark , we'll go with this one untill we have the time for another one
   //this methode is kinda shaky , i'm assuming all the answer submited by the user for the questions already exist in
-  // the goodAns array
+  // the goodAns array , (with the same order too ^^')
   let mark = 0;
   goodAnswers.sort();
   answers.sort();
